@@ -1,0 +1,52 @@
+[
+  {
+    "feature": "G2",
+    "importance": 0.825,
+    "type": "Gini Importance"
+  },
+  {
+    "feature": "absences",
+    "importance": 0.1157,
+    "type": "Gini Importance"
+  },
+  {
+    "feature": "activities_yes",
+    "importance": 0.0163,
+    "type": "Gini Importance"
+  },
+  {
+    "feature": "G1",
+    "importance": 0.0152,
+    "type": "Gini Importance"
+  },
+  {
+    "feature": "schoolsup_yes",
+    "importance": 0.0103,
+    "type": "Gini Importance"
+  },
+  {
+    "feature": "studytime",
+    "importance": 0.0073,
+    "type": "Gini Importance"
+  },
+  {
+    "feature": "failures",
+    "importance": 0.0058,
+    "type": "Gini Importance"
+  },
+  {
+    "feature": "famsup_yes",
+    "importance": 0.0022,
+    "type": "Gini Importance"
+  },
+  {
+    "feature": "internet_yes",
+    "importance": 0.0019,
+    "type": "Gini Importance"
+  },
+  {
+    "feature": "higher_yes",
+    "importance": 0.0003,
+    "type": "Gini Importance"
+  }
+]

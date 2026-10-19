@@ -1,0 +1,26 @@
+{
+  "DummyRegressor": {
+    "cv_5fold_mae": 3.3883,
+    "cv_5fold_rmse": 4.5745,
+    "cv_5fold_r2": -0.0086,
+    "test_mae": 3.6459,
+    "test_rmse": 4.5502,
+    "test_r2": -0.0097
+  },
+  "LinearRegression": {
+    "cv_5fold_mae": 1.1771,
+    "cv_5fold_rmse": 1.8493,
+    "cv_5fold_r2": 0.8343,
+    "test_mae": 1.4363,
+    "test_rmse": 2.1944,
+    "test_r2": 0.7652
+  },
+  "RandomForestRegressor": {
+    "cv_5fold_mae": 0.9197,
+    "cv_5fold_rmse": 1.4552,
+    "cv_5fold_r2": 0.8925,
+    "test_mae": 1.1492,
+    "test_rmse": 1.8517,
+    "test_r2": 0.8328
+  }
+}

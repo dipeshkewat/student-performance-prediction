@@ -1,0 +1,19 @@
+{
+  "train_samples": 316,
+  "test_samples": 79,
+  "features": [
+    "G1",
+    "G2",
+    "studytime",
+    "failures",
+    "absences",
+    "schoolsup",
+    "famsup",
+    "activities",
+    "higher",
+    "internet"
+  ],
+  "target": "G3",
+  "random_state": 42,
+  "test_size": 0.2
+}
