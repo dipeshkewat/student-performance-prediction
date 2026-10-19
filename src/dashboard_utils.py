@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import io
+import textwrap
 from pathlib import Path
 from typing import Optional, Tuple, Dict, Any, List
 import numpy as np
@@ -22,12 +23,10 @@ DATA_CLEANED_PATH = Path("data") / "processed" / "student_cleaned.csv"
 # ==============================================================================
 # PREMIUM MODERN SAAS CSS (Inspired by Image 1: Smart Student Dashboard)
 # ==============================================================================
-MODERN_DASHBOARD_CSS = """
+MODERN_DASHBOARD_CSS = textwrap.dedent("""
 <style>
-    /* Google Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-    /* Global Typography & Background */
     html, body, [class*="css"] {
         font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     }
@@ -36,11 +35,10 @@ MODERN_DASHBOARD_CSS = """
         background-color: #F4F6FB;
     }
 
-    /* Main Container Padding */
     .block-container {
-        padding-top: 1.5rem;
-        padding-bottom: 3rem;
-        max-width: 1400px;
+        padding-top: 1.2rem;
+        padding-bottom: 2.5rem;
+        max-width: 1440px;
     }
 
     /* Top Navigation Simulation */
@@ -51,8 +49,8 @@ MODERN_DASHBOARD_CSS = """
         background: #ffffff;
         padding: 12px 24px;
         border-radius: 18px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-        margin-bottom: 20px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+        margin-bottom: 18px;
         border: 1px solid #EEF2F6;
     }
     .top-navbar .brand {
@@ -82,32 +80,22 @@ MODERN_DASHBOARD_CSS = """
         justify-content: center;
         font-weight: 700;
         font-size: 0.95rem;
-        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
     }
 
     /* Welcome Hero Card */
     .hero-card {
         background: #ffffff;
-        border-radius: 24px;
+        border-radius: 22px;
         padding: 24px 28px;
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.03);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         border: 1px solid #EEF2F6;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 24px;
+        margin-bottom: 18px;
         position: relative;
         overflow: hidden;
-    }
-    .hero-card::after {
-        content: "";
-        position: absolute;
-        right: -30px;
-        top: -30px;
-        width: 180px;
-        height: 180px;
-        background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
-        border-radius: 50%;
     }
     .hero-title {
         font-size: 1.6rem;
@@ -116,7 +104,7 @@ MODERN_DASHBOARD_CSS = """
         margin-bottom: 6px;
     }
     .hero-subtitle {
-        font-size: 0.95rem;
+        font-size: 0.93rem;
         color: #64748B;
         line-height: 1.5;
     }
@@ -138,14 +126,14 @@ MODERN_DASHBOARD_CSS = """
         padding: 20px 22px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         border: 1px solid #EEF2F6;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
         height: 100%;
     }
     .card-header-flex {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 16px;
+        margin-bottom: 14px;
     }
     .card-title {
         font-size: 1.05rem;
@@ -163,42 +151,28 @@ MODERN_DASHBOARD_CSS = """
         align-items: center;
         gap: 16px;
         background: #F8FAFC;
-        padding: 16px 20px;
-        border-radius: 16px;
+        padding: 18px 22px;
+        border-radius: 18px;
         border: 1px solid #E2E8F0;
         margin-bottom: 18px;
     }
     .student-avatar-lg {
-        width: 56px;
-        height: 56px;
+        width: 58px;
+        height: 58px;
         border-radius: 50%;
         background: linear-gradient(135deg, #6366F1, #3B82F6);
         color: white;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         font-weight: 700;
     }
 
-    /* Stat Pill */
-    .stat-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        background: #F1F5F9;
-        padding: 6px 12px;
-        border-radius: 10px;
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: #475569;
-    }
-
-    /* Sidebar Customization */
+    /* Clean Modern Sidebar Matching Image 1 */
     section[data-testid="stSidebar"] {
-        background-color: #254EDB;
-        background-image: linear-gradient(180deg, #1E3A8A 0%, #2563EB 100%);
-        color: #ffffff;
+        background: #FFFFFF;
+        border-right: 1px solid #EEF2F6;
     }
     section[data-testid="stSidebar"] p, 
     section[data-testid="stSidebar"] span, 
@@ -206,25 +180,27 @@ MODERN_DASHBOARD_CSS = """
     section[data-testid="stSidebar"] h1,
     section[data-testid="stSidebar"] h2,
     section[data-testid="stSidebar"] h3 {
-        color: #F8FAFC !important;
+        color: #1E293B !important;
     }
     section[data-testid="stSidebar"] .stSelectbox > div > div {
-        background-color: rgba(255, 255, 255, 0.15) !important;
-        color: white !important;
+        background-color: #F8FAFC !important;
+        color: #0F172A !important;
         border-radius: 10px !important;
-        border: 1px solid rgba(255, 255, 255, 0.25) !important;
+        border: 1px solid #E2E8F0 !important;
     }
     
-    /* Buttons */
     .stButton>button {
         border-radius: 12px;
         font-weight: 600;
         padding: 8px 18px;
-        border: none;
         transition: all 0.2s ease-in-out;
     }
+
+    /* Hide ugly default streamlit header clutter */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
 </style>
-"""
+""")
 
 
 def apply_modern_theme() -> None:
@@ -235,10 +211,10 @@ def apply_modern_theme() -> None:
 def render_top_navbar(user_name: str = "Grace Stanley", role: str = "Academic Advisor") -> None:
     """Render the top search and user profile bar inspired by Image 1."""
     initials = "".join([part[0] for part in user_name.split() if part])[:2]
-    html = f"""
+    html = textwrap.dedent(f"""
     <div class="top-navbar">
         <div class="brand">
-            <span style="font-size: 1.5rem;">🎓</span> Smart Analytics
+            <span style="font-size: 1.4rem;">🎓</span> Smart Analytics
         </div>
         <div style="flex-grow: 1; max-width: 450px; margin: 0 30px;">
             <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 20px; padding: 7px 16px; display: flex; align-items: center; color: #94A3B8; font-size: 0.88rem;">
@@ -255,7 +231,7 @@ def render_top_navbar(user_name: str = "Grace Stanley", role: str = "Academic Ad
             </div>
         </div>
     </div>
-    """
+    """)
     st.markdown(html, unsafe_allow_html=True)
 
 
@@ -263,13 +239,8 @@ def render_top_navbar(user_name: str = "Grace Stanley", role: str = "Academic Ad
 # DATASET MANAGEMENT (Supports default cohort and user CSV uploads)
 # ==============================================================================
 def get_active_dataset() -> Tuple[pd.DataFrame, str]:
-    """Retrieve active dataset from session state or load default student-mat.csv.
-
-    Returns:
-        Tuple of (dataframe, source_name).
-    """
+    """Retrieve active dataset from session state or load default student-mat.csv."""
     if "active_df" not in st.session_state:
-        # Load default
         if DATA_CLEANED_PATH.exists():
             df = pd.read_csv(DATA_CLEANED_PATH)
             st.session_state["active_df"] = df
@@ -283,7 +254,6 @@ def get_active_dataset() -> Tuple[pd.DataFrame, str]:
             st.session_state["active_df"] = pd.DataFrame()
             st.session_state["dataset_name"] = "Empty"
 
-    # Ensure Student_ID exists
     df = st.session_state["active_df"]
     if not df.empty and "Student_ID" not in df.columns:
         df["Student_ID"] = [f"STU-{1001 + i}" for i in range(len(df))]
@@ -299,7 +269,6 @@ def set_custom_dataset(df: pd.DataFrame, filename: str) -> Tuple[bool, str]:
         if cleaned_df.empty:
             return False, "Uploaded file contains no valid records after cleaning."
 
-        # Compute predictions if model pipeline exists
         try:
             pipeline = load_production_model()
             X = cleaned_df[ALL_FEATURES]
@@ -399,7 +368,6 @@ def safe_scatter_trendline(
         color_continuous_scale="Blues" if color_col else None,
     )
 
-    # Compute regression line mathematically using numpy
     valid = df[[x_col, y_col]].dropna()
     if len(valid) > 2:
         x_vals = valid[x_col].values
